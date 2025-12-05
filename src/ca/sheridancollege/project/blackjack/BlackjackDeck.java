@@ -27,7 +27,7 @@ public class BlackjackDeck extends GroupOfCards {
             shuffle();
         }
 
-        return cards.removeFirst();
+        return cards.remove(0);
 	}
 
 	public void newDeck() {
