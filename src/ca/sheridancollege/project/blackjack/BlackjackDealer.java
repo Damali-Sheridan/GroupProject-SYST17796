@@ -3,30 +3,33 @@ package ca.sheridancollege.project.blackjack;
 import ca.sheridancollege.project.Player;
 
 public class BlackjackDealer extends Player {
+    private BlackjackHand hand;
+    private  BlackjackCard hiddenCard;
 
-    /**
-     * A constructor that allows you to set the player's unique ID
-     *
-     * @param name the unique ID to assign to this player.
-     */
     public BlackjackDealer(String name) {
         super(name);
+        this.hand = new BlackjackHand();
     }
 
+    public BlackjackHand getHand() {
+        return hand;
+    }
+
+    public void resetHand() {
+        hand.reset();
+        hiddenCard = null;
+    }
+
+    public void addHiddenCard(BlackjackCard card) {
+        hiddenCard = card;
+    }
     public void revealHiddenCard() {
-		// TODO - implement Dealer.revealHiddenCard
-		throw new UnsupportedOperationException();
+		if (hiddenCard != null) {
+            hand.addCard(hiddenCard);
+            hiddenCard = null;
+        }
 	}
 
-	public void hit() {
-		// TODO - implement Dealer.hit
-		throw new UnsupportedOperationException();
-	}
-
-	public void stand() {
-		// TODO - implement Dealer.stand
-		throw new UnsupportedOperationException();
-	}
 
     @Override
     public void play() {

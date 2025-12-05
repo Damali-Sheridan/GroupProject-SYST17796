@@ -5,7 +5,8 @@ import ca.sheridancollege.project.Player;
 public class BlackjackPlayer extends Player {
     private BlackjackHand hand;
     private BlackjackBank bank;
-
+    private BlackjackHand splitHand;
+    
     public BlackjackPlayer(String name, BlackjackBank bank) {
         super(name);
         this.bank = bank;
@@ -24,26 +25,9 @@ public class BlackjackPlayer extends Player {
         return bank.withdraw(amount);
 	}
 
-	public void hit() {
-
-	}
-
-	public void stand() {
-
-	}
-
-	/**
-	 * 
-	 * @param amount
-	 */
-	public void doubleBet(double amount) {
-
-	}
-
-	public void takeInsurance() {
-		// TODO - implement BlackjackPlayer.takeInsurance
-		throw new UnsupportedOperationException();
-	}
+    public void resetHand() {
+        hand.reset();
+    }
 
     @Override
     public void play() {

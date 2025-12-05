@@ -8,31 +8,22 @@ public class BlackjackBank {
 		return this.balance;
 	}
 
-	/**
-	 * 
-	 * @param balance
-	 */
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 
-	/**
-     *
-     * @param amount
-     * @return
-     */
 	public boolean withdraw(double amount) {
-		// TODO - implement Bank.withdraw
-		throw new UnsupportedOperationException();
+        if (balance >= amount && amount > 0) {
+            balance -= amount;
+            return true;
+        }
+        else {
+            return false;
+        }
 	}
 
-	/**
-	 * 
-	 * @param amount
-	 */
 	public void deposit(double amount) {
-		// TODO - implement Bank.deposit
-		throw new UnsupportedOperationException();
+        balance += amount;
 	}
 
 }
