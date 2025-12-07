@@ -43,7 +43,6 @@ public class BlackjackDataHandler {
             return new LoadedPlayer(data, bank);
 
         } catch (IOException e) {
-            System.out.println("Error loading player data.");
             return null;
         }
     }
@@ -75,12 +74,20 @@ public class BlackjackDataHandler {
     }
 
     public static class LoadedPlayer {
-        public BlackjackPlayerData data;
-        public BlackjackBank bank;
+        private final BlackjackPlayerData data;
+        private final BlackjackBank bank;
 
-        public LoadedPlayer(BlackjackPlayerData d, BlackjackBank b) {
-            this.data = d;
-            this.bank = b;
+        public LoadedPlayer(BlackjackPlayerData data, BlackjackBank bank) {
+            this.data = data;
+            this.bank = bank;
+        }
+
+        public BlackjackPlayerData getData() {
+            return data;
+        }
+
+        public BlackjackBank getBank() {
+            return bank;
         }
     }
 }
