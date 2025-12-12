@@ -14,7 +14,6 @@ public class BlackjackHand {
 	}
 
     public boolean isBust() {
-
         return handTotal > 21;
     }
 
@@ -47,10 +46,22 @@ public class BlackjackHand {
 
     }
 
+    public List<BlackjackCard> getCards() {
+        return cards;
+    }
 
-	public int getHandValue() {
+	public int getHandTotal() {
 		return this.handTotal;
 	}
 
+    public String toString() {
+        String handString = "";
+
+        for (BlackjackCard c : cards) {
+            handString += c + "\n";
+        }
+
+        return handString;
+    }
 
 }

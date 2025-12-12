@@ -1,6 +1,5 @@
 package ca.sheridancollege.project.blackjack;
 import ca.sheridancollege.project.GroupOfCards;
-import ca.sheridancollege.project.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +20,7 @@ public class BlackjackDeck extends GroupOfCards {
         Collections.shuffle(cards);
 	}
 
-	public BlackjackCard dealCard(Player player) {
+	public BlackjackCard dealCard() {
         if (cards.isEmpty()) {
             newDeck();
             shuffle();

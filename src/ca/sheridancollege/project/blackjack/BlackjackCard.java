@@ -16,11 +16,7 @@ public class BlackjackCard extends Card {
 	public Value getValue() {
 		return this.value;
 	}
-
-	public Suit getSuit() {
-		return this.suit;
-	}
-
+    
     public int getNumValue() {
         return value.getNumValue();
     }
